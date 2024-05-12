@@ -3,6 +3,9 @@ import { PORT, mongoDBurl } from "./config.js";
 import mongoose from "mongoose";
 import cors from "cors"
 import dotenv from "dotenv";
+import signupRoute from "./routes/SigUpRoute.js";
+import userRoute from "./routes/UserRoutes.js";
+import loginRoute from "./routes/LogInRoute.js";
 
 dotenv.config(); // Load environment variables from .env file
 
@@ -18,6 +21,9 @@ app.get('/', (request,response) => {
     return response.status(234).send('The server of events planner web application is up and running if you are seeing this!')
 })
 
+app.use('/signup', signupRoute);
+app.use('/users', userRoute);
+app.use('/login', loginRoute);
 
 mongoose.connect(mongoDBurl)
 .then(()=>{
@@ -25,7 +31,9 @@ mongoose.connect(mongoDBurl)
 
     app.listen(PORT, () => {
         console.log("Listening on PORT: ", PORT)
+
     })
     
 })
 .catch((console.error()));
+
