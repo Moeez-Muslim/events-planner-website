@@ -1,9 +1,11 @@
 import './App.css';
+import Login from './Login-Signup/Login';
+import Signup from './Login-Signup/Signup';
 
 function App() {
   return (
     <div className="App">
-      <h1>Events Planner Frontend here</h1>
+      <Login/>
     </div>
   );
 }
