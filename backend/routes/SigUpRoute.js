@@ -16,8 +16,11 @@ router.post('/', async (req, res) => {
       password,
     } = req.body;
 
+    console.log('Received request to create a new user:', req.body); // Debug statement
+
     // Validate required fields
     if (!firstName || !lastName || !email || !phoneNumber || !password) {
+      console.log('Missing required fields:', req.body); // Debug statement
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
@@ -26,11 +29,10 @@ router.post('/', async (req, res) => {
     const existingCredential = await Credentials.findOne({ email });
 
     if (existingUser || existingCredential) {
+      console.log('Email already exists:', email); // Debug statement
       return res.status(409).json({ error: 'Email already exists' });
     }
 
-    // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create new user
     const newUser = new User({
@@ -45,7 +47,7 @@ router.post('/', async (req, res) => {
     // Create corresponding credential
     const newCredential = new Credentials({
       email,
-      password: hashedPassword,
+      password,
     });
 
     await newCredential.save();
@@ -56,6 +58,7 @@ router.post('/', async (req, res) => {
       userId: newUser._id,
     });
   } catch (error) {
+    console.error('Error creating user:', error); // Debug statement
     res.status(500).json({ error: 'Server error' });
   }
 });
@@ -66,19 +69,24 @@ router.delete('/:userId', async (req, res) => {
     const { userId } = req.params;
     const { password } = req.body;
 
+    console.log('Received request to delete user with ID:', userId); // Debug statement
+
     // Validate password
     const user = await User.findById(userId);
     if (!user) {
+      console.log('User not found:', userId); // Debug statement
       return res.status(404).json({ error: 'User not found' });
     }
 
     const credential = await Credentials.findOne({ email: user.email });
     if (!credential) {
+      console.log('User credential not found for user:', userId); // Debug statement
       return res.status(404).json({ error: 'User credential not found' });
     }
 
     const passwordMatch = await bcrypt.compare(password, credential.password);
     if (!passwordMatch) {
+      console.log('Invalid password for user:', userId); // Debug statement
       return res.status(401).json({ error: 'Invalid password' });
     }
 
@@ -88,6 +96,7 @@ router.delete('/:userId', async (req, res) => {
 
     res.status(200).json({ message: 'User deleted successfully' });
   } catch (error) {
+    console.error('Error deleting user:', error); // Debug statement
     res.status(500).json({ error: 'Server error' });
   }
 });

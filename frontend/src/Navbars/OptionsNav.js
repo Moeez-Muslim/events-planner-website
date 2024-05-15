@@ -22,7 +22,7 @@ export default function OptionsNav() {
                 </li>
             </ul>
             
-            <button className="btn btn-outline-danger" type="submit">Make Event for Me</button>
+            <button className="btn btn-outline-danger" type="submit">Log Out</button>
             </div>
         </div>
         </nav>

@@ -1,7 +1,7 @@
 import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import {Credentials} from "../models/CredentialsModel.js"
+import { Credentials } from "../models/CredentialsModel.js";
 import { User } from "../models/UserModel.js";
 
 const router = express.Router();
@@ -10,34 +10,42 @@ const router = express.Router();
 router.post("/", async (request, response) => {
     try {
         const { email, password } = request.body;
-        console.log(email)
+        console.log("Received login request for email:", email);
 
         if (!email || !password) {
+            console.log("Missing email or password");
             return response.status(400).send({ message: "email and password are required" });
         } 
 
-        // Find user by CNIC
+        // Find user by email
         const user = await Credentials.findOne({ email });
-        
+
+        console.log("Found user:", user);
 
         if (!user) {
+            console.log("User not found for email:", email);
             return response.status(401).send({ message: "Invalid email or password" });
         }
 
         // Compare passwords
         const isPasswordCorrect = await bcrypt.compare(password, user.password);
 
+        console.log("Password correct?", isPasswordCorrect);
+
         if (!isPasswordCorrect) {
-            return response.status(401).send({ message: "Invalid email or password" });
+            console.log("Incorrect password for email:", email);
+            return response.status(401).send({ message: "Invalid password" });
         }
 
-        const user_userlist = await User.findOne({ email });
-        console.log(user_userlist._id)
+        // Find user details
+        const userDetail = await User.findOne({ email });
+        console.log("User details:", userDetail);
+
         // Create a JWT token
         const token = jwt.sign(
             {
-                userId: user_userlist._id,
-                email: user_userlist.email,
+                userId: userDetail._id,
+                email: userDetail.email,
             },
             process.env.JWT_SECRET_KEY,
             {
@@ -45,9 +53,11 @@ router.post("/", async (request, response) => {
             }
         );
 
+        console.log("Login successful for email:", email);
+
         return response.status(200).send({ token, message: "Login successful" });
     } catch (error) {
-        console.error(error.message);
+        console.error("Error occurred during login:", error);
         return response.status(500).send({ message: "Internal server error" });
     }
 });
