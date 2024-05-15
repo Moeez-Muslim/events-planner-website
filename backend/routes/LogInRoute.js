@@ -14,7 +14,7 @@ router.post("/", async (request, response) => {
 
         if (!email || !password) {
             return response.status(400).send({ message: "email and password are required" });
-        }
+        } 
 
         // Find user by CNIC
         const user = await Credentials.findOne({ email });

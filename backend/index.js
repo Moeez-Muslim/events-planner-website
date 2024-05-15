@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import signupRoute from "./routes/SigUpRoute.js";
 import userRoute from "./routes/UserRoutes.js";
 import loginRoute from "./routes/LogInRoute.js";
+import msgRoute from "./routes/msgRoute.js"
 
 dotenv.config(); // Load environment variables from .env file
 
@@ -24,6 +25,7 @@ app.get('/', (request,response) => {
 app.use('/signup', signupRoute);
 app.use('/users', userRoute);
 app.use('/login', loginRoute);
+app.use('/api/v1/message/send', msgRoute);
 
 mongoose.connect(mongoDBurl)
 .then(()=>{
