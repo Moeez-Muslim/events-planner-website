@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const decorSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true
+    },
     imageURL: {
         type: String,
         required: true
@@ -20,6 +24,4 @@ const decorSchema = new mongoose.Schema({
     }
 });
 
-const Decor = mongoose.model('Decor', decorSchema);
-
-module.exports = Decor;
+export const Decor = mongoose.model('Decor', decorSchema);

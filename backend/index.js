@@ -8,6 +8,8 @@ import userRoute from "./routes/UserRoutes.js";
 import loginRoute from "./routes/LogInRoute.js";
 import msgRoute from "./routes/msgRoute.js"
 import venueRoute from "./routes/VenueRoute.js"
+import foodRoute from "./routes/FoodRoute.js";
+import decorRoute from "./routes/DecorRoute.js";
 
 dotenv.config(); // Load environment variables from .env file
 
@@ -27,7 +29,9 @@ app.use('/signup', signupRoute);
 app.use('/users', userRoute);
 app.use('/login', loginRoute);
 app.use('/api/v1/message/send', msgRoute);
-app.use('/venue', venueRoute)
+app.use('/venue', venueRoute);
+app.use('/food', foodRoute);
+app.use('/decor', decorRoute);
 
 
 mongoose.connect(mongoDBurl)

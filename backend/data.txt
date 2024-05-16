@@ -261,3 +261,152 @@ const venuesData = [
   }
 ];
 
+
+
+const dummyFoods = [
+  {
+    title: 'Premium Buffet',
+    description: 'A lavish spread featuring prime rib, lobster tail, gourmet salads, artisanal cheeses, and decadent desserts.',
+    type: 'Wedding',
+    cost: 5000,
+    imageURL: 'https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg?t=st=1715807021~exp=1715810621~hmac=524df10dffd8f8a8c9974a77ef8827d5c8bd1c71935c951429ce8f248ee76229&w=740'
+  },
+  {
+    title: 'Breakfast Package',
+    description: 'Assorted pastries, fresh fruit platter, yogurt parfait bar, and freshly brewed coffee.',
+    type: 'Corporate Event',
+    cost: 800,
+    imageURL: 'https://img.freepik.com/premium-photo/metal-container-products-table-food-court-blurred-bokeh-background_345343-7611.jpg?w=740'
+  },
+  {
+    title: 'Party Platter',
+    description: 'Customizable platter with sliders, mini tacos, chicken wings, veggie sticks with dip, and assorted mini desserts.',
+    type: 'Party',
+    cost: 300,
+    imageURL: 'https://img.freepik.com/free-photo/different-types-delicious-desserts_1203-652.jpg?t=st=1715807053~exp=1715810653~hmac=cdd8eb65cd6bf7f2608acfea1b117329bb9fdef16e01b05e903cb0a5f145bde2&w=740'
+  },
+  {
+    title: 'Afternoon Snack Break',
+    description: 'Cheese and cracker platter, assorted nuts, fresh fruit skewers, and iced tea.',
+    type: 'Corporate Event',
+    cost: 400,
+    imageURL: 'https://img.freepik.com/free-photo/variety-premade-meals-supermarket-deli_60438-4016.jpg?t=st=1715807125~exp=1715810725~hmac=03da99977d33b23468298aa13592f9152a530b852f7279a2fc750d4a1a0e6b11&w=826'
+  },
+  {
+    title: 'Gala Dinner Feast',
+    description: 'An elegant four-course dinner featuring appetizers, soup, choice of entree, and decadent desserts.',
+    type: 'Ceremony',
+    cost: 1500,
+    imageURL: 'https://img.freepik.com/premium-psd/unleash-your-taste-buds-with-our-bold-bites-transparent-background_1111860-2060.jpg?w=740'
+  },
+  {
+    title: 'Summer BBQ Party Pack',
+    description: 'Grilled burgers, hot dogs, BBQ chicken, corn on the cob, potato salad, and watermelon slices.',
+    type: 'Party',
+    cost: 600,
+    imageURL: 'https://img.freepik.com/free-photo/grill-with-variety-meats-it_188544-8372.jpg?t=st=1715807182~exp=1715810782~hmac=eadcc9141a79d80444b01a32041537b99d2bfb1825b1ab751dcf699800240c13&w=740'
+  },
+  {
+    title: 'Executive Luncheon Buffet',
+    description: 'Assorted sandwiches, gourmet salads, soup du jour, and assorted desserts.',
+    type: 'Corporate Event',
+    cost: 1000,
+    imageURL: 'https://img.freepik.com/free-photo/mixed-fried-meat-with-pomegranate-sauce_140725-3461.jpg?t=st=1715807240~exp=1715810840~hmac=2c43598bba04879cc52e85a2b0575bdbdfbae84b0d1a958c47a8e3ecab39cc6f&w=740'
+  },
+  {
+    title: 'Fancy Cocktail Party Platter',
+    description: 'Elegant hors d\'oeuvres including caviar, smoked salmon canapés, mini quiches, and champagne.',
+    type: 'Party',
+    cost: 1200,
+    imageURL: 'https://img.freepik.com/premium-photo/assorted-delicious-grilled-meat-vegetables-with-fresh-salad-bbq-sauce-cutting-board-woode_135427-1532.jpg?w=740'
+  },
+  {
+    title: 'Festive Holiday Brunch',
+    description: 'Eggnog French toast, glazed ham, breakfast casserole, cranberry scones, and mulled cider.',
+    type: 'Ceremony',
+    cost: 700,
+    imageURL: 'https://img.freepik.com/premium-photo/thanksgiving-buffet-display-with-assortment-00613-01_883586-107537.jpg?w=740'
+  },
+  {
+    title: 'VIP Reception Package',
+    description: 'Champagne toast, canapés, charcuterie board, signature cocktails, and gourmet desserts.',
+    type: 'Wedding',
+    cost: 2000,
+    imageURL: 'https://img.freepik.com/premium-photo/thanksgiving-buffet-display-with-assortment-00613-01_883586-107537.jpg?w=740'
+  }
+];
+
+
+const dummyDecors = [
+  {
+    title: 'Elegant Flower Arrangement',
+    imageURL: 'https://img.freepik.com/premium-photo/photo-is-must-everyday-work-ai-generated-best-wonderful-photo_1070043-225622.jpg?w=740',
+    eventType: 'Wedding',
+    cost: 1000,
+    description: 'Beautiful floral arrangements with roses, lilies, and orchids for a luxurious wedding.'
+  },
+  {
+    title: 'Corporate Event Backdrop',
+    imageURL: 'https://example.com/corporate-event-backdrop.jpg',
+    eventType: 'Corporate Event',
+    cost: 800,
+    description: 'Customizable backdrop with company logo and colors for corporate events and conferences.'
+  },
+  {
+    title: 'Colorful Balloon Arch',
+    imageURL: 'https://img.freepik.com/premium-photo/ai-generated-ai-generative-balloon-garland-arc-decoration-wedding-ceremony-fashion_95211-20645.jpg?w=900',
+    eventType: 'Party',
+    cost: 500,
+    description: 'Vibrant balloon arches in various colors and designs for birthday parties and celebrations.'
+  },
+  {
+    title: 'Wedding Aisle Decor',
+    imageURL: 'https://img.freepik.com/premium-photo/entrance-garden_865967-425156.jpg?w=740',
+    eventType: 'Wedding',
+    cost: 1200,
+    description: 'Romantic aisle decor with flower petals, candles, and fairy lights for a dreamy wedding ceremony.'
+  },
+  {
+    title: 'Party Table Centerpieces',
+    imageURL: 'https://img.freepik.com/premium-photo/bouquets-pink-roses-hydrangeas-stand-dinner-table_8353-4593.jpg?w=740',
+    eventType: 'Party',
+    cost: 300,
+    description: 'Fun and festive table centerpieces with balloons, confetti, and party favors for any celebration.'
+  },
+  {
+    title: 'Ceremony Stage Decor',
+    imageURL: 'https://img.freepik.com/premium-photo/flowers-vase_1048944-23859941.jpg?w=740',
+    eventType: 'Ceremony',
+    cost: 1500,
+    description: 'Grand stage decor with drapes, lights, and floral arrangements for formal ceremonies and events.'
+  },
+  {
+    title: 'Multimedia Projection Mapping',
+    imageURL: 'https://example.com/projection-mapping.jpghttps://img.freepik.com/premium-photo/ironing-out-details-shot-corporate-businesspeople-meeting-boardroom_590464-7863.jpg?w=740',
+    eventType: 'Corporate Event',
+    cost: 2000,
+    description: 'Immersive multimedia projection mapping for corporate presentations and product launches.'
+  },
+  {
+    title: 'Festive Party Banners',
+    imageURL: 'https://img.freepik.com/free-vector/pack-three-fantastic-banners-with-colorful-backgrounds_23-2147584280.jpg?t=st=1715810217~exp=1715813817~hmac=0ce4c6a8ff1167e8599f019b0a1efa40a008ae68c7dc2fa024bf16304875cf7d&w=740',
+    eventType: 'Party',
+    cost: 400,
+    description: 'Colorful party banners and garlands to add a festive touch to any indoor or outdoor celebration.'
+  },
+  {
+    title: 'Wedding Venue Lighting',
+    imageURL: 'https://img.freepik.com/free-photo/photorealistic-wedding-venue-with-intricate-decor-ornaments_23-2151481493.jpg?t=st=1715810252~exp=1715813852~hmac=608e8b4368f543fe1d8a1be9824d96654322df6fec1f9e6650c363754807700e&w=740',
+    eventType: 'Wedding',
+    cost: 1800,
+    description: 'Elegant lighting design to enhance the ambiance of wedding venues and create a romantic atmosphere.'
+  },
+  {
+    title: 'Ceremony Entrance Decor',
+    imageURL: 'https://img.freepik.com/free-photo/beautiful-wedding-flower-arrangement-seats-along-aisle_1127-3212.jpg?t=st=1715810286~exp=1715813886~hmac=bc759fb30473915e281478715b62a75514d262081970d305c985d2fdd5cf8f09&w=740',
+    eventType: 'Ceremony',
+    cost: 1000,
+    description: 'Beautiful decor for the entrance of ceremony venues, including floral arches and welcome signs.'
+  }
+];
+
